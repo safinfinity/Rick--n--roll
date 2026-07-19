@@ -1,6 +1,6 @@
 #include "game.h"
 #include "menu.h"
-
+#include "player_setup.h"
 static GameState currentState;
 
 void InitGame(void)
@@ -58,9 +58,8 @@ void DrawGame(void)
             break;
 
         case GAME_PLAYER_SETUP:
-            ClearBackground(RAYWHITE);
-            DrawText("Player Setup (Coming Next)", 280, 250, 40, BLACK);
-            break;
+    DrawPlayerSetup();
+    break;
 
         default:
             break;
