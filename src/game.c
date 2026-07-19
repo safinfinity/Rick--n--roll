@@ -37,8 +37,25 @@ void UpdateGame(void)
         }
 
         case GAME_PLAYER_SETUP:
-            // Temporary screen for now
+{
+    PlayerSetupAction action = UpdatePlayerSetup();
+
+    switch (action)
+    {
+        case PLAYER_SETUP_CONTINUE:
+            // Next screen later
             break;
+
+        case PLAYER_SETUP_BACK:
+            currentState = GAME_MENU;
+            break;
+
+        default:
+            break;
+    }
+
+    break;
+}
 
         case GAME_EXIT:
             CloseWindow();
